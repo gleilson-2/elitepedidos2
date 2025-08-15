@@ -23,6 +23,23 @@ if (isUsingDefaults) {
   const mockClient = {
     from: () => ({
       select: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+      select: () => ({
+        eq: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        is: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        neq: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        gt: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        gte: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        lt: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        lte: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        like: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        ilike: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        in: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        contains: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        order: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        limit: () => Promise.resolve({ data: [], error: { message: 'Supabase not configured' } }),
+        single: () => Promise.resolve({ data: null, error: { message: 'Supabase not configured' } }),
+        maybeSingle: () => Promise.resolve({ data: null, error: { message: 'Supabase not configured' } })
+      }),
       insert: () => Promise.resolve({ data: null, error: { message: 'Supabase not configured' } }),
       update: () => Promise.resolve({ data: null, error: { message: 'Supabase not configured' } }),
       delete: () => Promise.resolve({ data: null, error: { message: 'Supabase not configured' } }),
