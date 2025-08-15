@@ -9,8 +9,3 @@ const defaultKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSI
 
 const finalUrl = supabaseUrl || defaultUrl;
 const finalKey = supabaseAnonKey || defaultKey;
-
-if (!finalUrl || !finalKey) {
-  console.warn('⚠️ Supabase environment variables not configured properly');
-}
-export const supabase = createClient(finalUrl, finalKey);
