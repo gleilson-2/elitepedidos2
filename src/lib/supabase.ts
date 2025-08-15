@@ -14,6 +14,8 @@ const finalKey = supabaseAnonKey || defaultKey;
 const isUsingDefaults = !supabaseUrl || !supabaseAnonKey || 
   supabaseUrl === defaultUrl || supabaseAnonKey === defaultKey;
 
+let supabase: any;
+
 if (isUsingDefaults) {
   console.warn('⚠️ Supabase environment variables not configured properly - using mock client');
   
@@ -41,7 +43,9 @@ if (isUsingDefaults) {
     }
   };
   
-  export const supabase = mockClient as any;
+  supabase = mockClient as any;
 } else {
-  export const supabase = createClient(finalUrl, finalKey);
+  supabase = createClient(finalUrl, finalKey);
 }
+
+export { supabase };
